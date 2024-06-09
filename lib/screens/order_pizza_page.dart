@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playandpizza/main.dart';
+import 'package:playandpizza/screens/isi_saldo_1.dart';
 import 'package:playandpizza/utils/color.dart';
 
 class OrderPizzaPageScreen extends StatefulWidget {
@@ -34,7 +35,7 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: true,
         toolbarHeight: 60,
         backgroundColor: backgroundColor,
         scrolledUnderElevation: 0,
@@ -50,7 +51,10 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
         actions: [
           GestureDetector(
             onTap: () {
-              // Redirect Ke Top UP
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const IsiSaldo1()),
+              );
             },
             child: Container(
               margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
@@ -82,7 +86,7 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
                       ),
                     ),
                     child: Image.asset(
-                      'assets/coin.png', //placeholder pizza icon
+                      'assets/slices.png', //placeholder pizza icon
                       width: 32,
                       height: 32,
                     ),
