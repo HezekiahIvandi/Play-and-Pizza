@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playandpizza/screens/order_pizza_page.dart';
 import 'package:playandpizza/utils/color.dart';
 
 class PizzaWidget extends StatelessWidget {
   final String pizzaImage;
   final String pizzaName;
-  final String pizzaPrice;
+  final int pizzaPrice;
   const PizzaWidget({
     super.key,
     required this.pizzaImage,
@@ -50,27 +51,47 @@ class PizzaWidget extends StatelessWidget {
                             fontWeight: FontWeight.w700,
                           ),
                         ),
-                        SizedBox(
-                          child: Text(
-                            pizzaPrice,
+                        SizedBox(child: Builder(builder: (context) {
+                          if (pizzaPrice == 1) {
+                            return Text(
+                              '$pizzaPrice slice',
+                              style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                              ),
+                              textAlign: TextAlign.end,
+                            );
+                          }
+                          return Text(
+                            '$pizzaPrice slices',
                             style: GoogleFonts.poppins(
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
                             ),
-                          ),
-                        ),
+                            textAlign: TextAlign.end,
+                          );
+                        })),
                       ],
                     ),
                     Align(
                       alignment: Alignment.bottomRight,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => OrderPizzaPageScreen(
+                                      pizzaImage: pizzaImage,
+                                      pizzaName: pizzaName,
+                                      pizzaPrice: pizzaPrice,
+                                    )),
+                          );
+                        },
                         style: TextButton.styleFrom(
                           backgroundColor: primaryColor,
                           shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(8)),
                           ),
-                          fixedSize: const Size(100, 40),
                         ),
                         child: Text(
                           'Beli',

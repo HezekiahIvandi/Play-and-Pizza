@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playandpizza/utils/color.dart';
 import 'package:playandpizza/widgets/pizza_widget.dart';
+import 'package:playandpizza/main.dart';
 
 class PizzaScreen extends StatefulWidget {
   const PizzaScreen({super.key});
@@ -46,7 +47,7 @@ class _PizzaScreenState extends State<PizzaScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    '837',
+                    '$slices',
                     style: GoogleFonts.poppins(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -62,7 +63,7 @@ class _PizzaScreenState extends State<PizzaScreen> {
                       ),
                     ),
                     child: Image.asset(
-                      'assets/coin.png',
+                      'assets/coin.png', //placeholder pizza icon
                       width: 32,
                       height: 32,
                     ),
@@ -78,38 +79,38 @@ class _PizzaScreenState extends State<PizzaScreen> {
           margin: const EdgeInsets.symmetric(horizontal: 20),
           child: const Column(
             children: [
-              const SizedBox(
+              SizedBox(
                 height: 16,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/peperoni.png',
                 pizzaName: 'Peperoni',
-                pizzaPrice: '100 tiket',
+                pizzaPrice: 1,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/cheese_onions.png',
                 pizzaName: 'Keju & Bawang',
-                pizzaPrice: '100 tiket',
+                pizzaPrice: 1,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/mushroom.png',
                 pizzaName: 'Jamur',
-                pizzaPrice: '100 tiket',
+                pizzaPrice: 1,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/cheese_tomatoes.png',
                 pizzaName: 'Keju & Tomat',
-                pizzaPrice: '100 tiket',
+                pizzaPrice: 1,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/double_cheese.png',
                 pizzaName: 'Keju Mozarella',
-                pizzaPrice: '100 tiket',
+                pizzaPrice: 2,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/nuggets.png',
                 pizzaName: 'Nuget Ayam',
-                pizzaPrice: '100 tiket',
+                pizzaPrice: 1,
               ),
             ],
           ),

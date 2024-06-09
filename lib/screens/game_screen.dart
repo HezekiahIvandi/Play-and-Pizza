@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playandpizza/main.dart';
 import 'package:playandpizza/widgets/games_widget.dart';
 
 import '../utils/color.dart';
@@ -47,7 +48,7 @@ class _GammeScreenState extends State<GammeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    '837',
+                    '$coins',
                     style: GoogleFonts.poppins(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
