@@ -69,7 +69,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ],
             ),
           ),
-          SizedBox(
+          Flex(
+            direction: Axis.vertical,
+            children: [
+              SizedBox(
             height: 20,
             child: SmoothPageIndicator(
               controller: _pageController,
@@ -82,7 +85,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 20),
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             child: ElevatedButton(
@@ -139,6 +142,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ],
           ),
           SizedBox(height: 20),
+            ],
+          ),
+
+          
         ],
       ),
     );

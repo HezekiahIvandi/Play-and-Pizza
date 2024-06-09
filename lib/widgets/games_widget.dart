@@ -57,7 +57,7 @@ class GamesWidget extends StatelessWidget {
                       fontWeight: FontWeight.w600),
                 ),
                 Text(
-                  '100 coins',
+                  gamePrice,
                   style: GoogleFonts.poppins(
                       color: Colors.white,
                       fontSize: 11,

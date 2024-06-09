@@ -8,7 +8,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'firebase_options.dart';
 import 'package:playandpizza/resources/state_controll_wrapper.dart';
 
-int coins = 837; // initial coin
+int coins = 8; // initial coin
 int slices = 3; // initial slices
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

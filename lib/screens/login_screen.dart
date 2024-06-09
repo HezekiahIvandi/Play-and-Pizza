@@ -1,4 +1,4 @@
-import 'package:playandpizza/resources/Auth_service.dart';
+import 'package:playandpizza/resources/auth_service.dart';
 import 'dart:developer';
 import 'package:playandpizza/widgets/auth_textfield.dart';
 import 'package:flutter/material.dart';

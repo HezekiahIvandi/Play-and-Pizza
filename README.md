@@ -1,20 +1,11 @@
-<<<<<<< HEAD
 # Play-and-Pizza
-=======
-# app2
 
-A new Flutter project.
+Sebuah aplikasi yang menarik inspirasi dari Timezone dan PizzaHut
+Pada aplikasi ini bisa memainkan minigames untuk mendapatkan slice pizza
+Slice pizza tersebut bisa digunakan untuk ditukar dengan pizza pilihan pengguna
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
->>>>>>> ab8eaac (Inisialisasi)
+535220001 Marchella Angelina
+535220014 Eriko Levino Sasmitra
+535220016 Vie Huang
+535220019 Sean Henry Wijaya
+535220039 Hezekiah Ivandi

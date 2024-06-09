@@ -111,32 +111,32 @@ class _PizzaScreenState extends State<PizzaScreen> {
               PizzaWidget(
                 pizzaImage: 'assets/peperoni.png',
                 pizzaName: 'Peperoni',
-                pizzaPrice: 1,
+                pizzaPrice: 8,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/cheese_onions.png',
                 pizzaName: 'Keju & Bawang',
-                pizzaPrice: 1,
+                pizzaPrice: 6,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/mushroom.png',
                 pizzaName: 'Jamur',
-                pizzaPrice: 1,
+                pizzaPrice: 6,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/cheese_tomatoes.png',
                 pizzaName: 'Keju & Tomat',
-                pizzaPrice: 1,
+                pizzaPrice: 8,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/double_cheese.png',
                 pizzaName: 'Keju Mozarella',
-                pizzaPrice: 2,
+                pizzaPrice: 8,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/nuggets.png',
                 pizzaName: 'Nuget Ayam',
-                pizzaPrice: 1,
+                pizzaPrice: 8,
               ),
             ],
           ),

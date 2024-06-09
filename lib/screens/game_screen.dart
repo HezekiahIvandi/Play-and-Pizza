@@ -113,32 +113,32 @@ class _GammeScreenState extends State<GammeScreen> {
               GamesWidget(
                 gameImage: '',
                 gameName: 'Minigame 1',
-                gamePrice: '100 coins',
+                gamePrice: '1 coins',
               ),
               GamesWidget(
                 gameImage: '',
                 gameName: 'Minigame 2',
-                gamePrice: '100 coins',
+                gamePrice: '2 coins',
               ),
               GamesWidget(
                 gameImage: '',
                 gameName: 'Minigame 3',
-                gamePrice: '100 coins',
+                gamePrice: '1 coins',
               ),
               GamesWidget(
                 gameImage: '',
                 gameName: 'Minigame 4',
-                gamePrice: '100 coins',
+                gamePrice: '3 coins',
               ),
               GamesWidget(
                 gameImage: '',
                 gameName: 'Minigame 5',
-                gamePrice: '100 coins',
+                gamePrice: '2 coins',
               ),
               GamesWidget(
                 gameImage: '',
                 gameName: 'Minigame 6',
-                gamePrice: '100 coins',
+                gamePrice: '1 coins',
               ),
             ],
           ),
