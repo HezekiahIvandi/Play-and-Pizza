@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playandpizza/screens/unity_game_screen.dart';
 import 'package:playandpizza/utils/color.dart';
 
 class GamesWidget extends StatelessWidget {
@@ -75,7 +76,12 @@ class GamesWidget extends StatelessWidget {
                       ),
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => UnityGameScreen()));
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

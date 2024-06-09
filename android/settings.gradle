@@ -26,3 +26,12 @@ plugins {
 }
 
 include ":app"
+
+
+include ":unityLibrary"
+project(":unityLibrary").projectDir = file("./unityLibrary")
+
+include ":unityLibrary:FirebaseApp.androidlib"
+project(":unityLibrary:FirebaseApp.androidlib").projectDir = file("./unityLibrary/FirebaseApp.androidlib")
+
+

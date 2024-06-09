@@ -39,6 +39,7 @@ dependencies:
   firebase_core: ^3.0.0
   firebase_auth: ^5.0.0
   cloud_firestore: ^5.0.0
+  flutter_unity_widget: ^2022.2.1
 
 dev_dependencies:
   flutter_test:
