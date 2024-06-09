@@ -41,6 +41,12 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
         title: Container(
           margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
         ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         actions: [
           GestureDetector(
             onTap: () {
