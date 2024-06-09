@@ -100,6 +100,15 @@ flutter:
     - assets/minigames.png
     - assets/profile.png
     - assets/Right Arrow.png
+    - assets/card.png
+    - assets/gopay.png
+    - assets/ngutangtetangga.png
+    - assets/ovo.png
+    - assets/youmoney.png
+    - assets/shopeepay.png
+    - assets/slices.png
+    - assets/success.png
+    # - assets/Onboarding Illustration - 4.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

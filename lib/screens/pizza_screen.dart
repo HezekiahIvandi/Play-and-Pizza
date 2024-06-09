@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playandpizza/screens/isi_saldo_1.dart';
 import 'package:playandpizza/utils/color.dart';
 import 'package:playandpizza/widgets/pizza_widget.dart';
 import 'package:playandpizza/main.dart';
@@ -31,7 +32,10 @@ class _PizzaScreenState extends State<PizzaScreen> {
         actions: [
           GestureDetector(
             onTap: () {
-              // Redirect Ke Top UP
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const IsiSaldo1()),
+              );
             },
             child: Container(
               margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
