@@ -16,13 +16,13 @@ class GamesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 150,
-      height: 150,
+      width: MediaQuery.of(context).size.width / 2 - 28,
+      height: MediaQuery.of(context).size.width / 2 - 28,
       child: Stack(
         children: [
           SizedBox(
-            width: 175,
-            height: 175,
+            width: MediaQuery.of(context).size.width / 2 - 28,
+            height: MediaQuery.of(context).size.width / 2 - 28,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.asset(
