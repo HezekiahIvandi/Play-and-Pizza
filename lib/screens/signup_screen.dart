@@ -130,10 +130,10 @@ class _SignupScreenState extends State<SignupScreen> {
                           borderRadius: BorderRadius.circular(
                               8.0), // Adjust this value to change the roundedness
                         ),
-                        padding: const EdgeInsets.symmetric(horizontal: 110),
                       ),
                       onPressed: _signup,
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text('Gabung sekarang'),
                           const SizedBox(width: 10),
@@ -175,18 +175,14 @@ class _SignupScreenState extends State<SignupScreen> {
 
   gotoLogin(BuildContext context) => Navigator.pushNamed(context, '/login');
 
-  _signup() async {
-    //Ccek apakah password dan konfirmasi password cocok
-    if (_pwController.text != _konfirmasiPwController.text) {
-      log('Password tidak sesuai');
-      return null;
-    }
-    log('Pass sesuai');
-
-    final user = await _auth.createUserWithEmailAndPassword(
-        _emailController.text, _pwController.text);
-    if (user != null) {
-      log('User created successfully');
+  void _signup() async {
+    String res = await AuthService().createUserWithEmailAndPassword(
+      email: _emailController.text,
+      password: _pwController.text,
+      username: _usernameController.text,
+    );
+    if (res == "success") {
+      Navigator.pushNamed(context, '/auth');
     }
   }
 }

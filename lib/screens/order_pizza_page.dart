@@ -34,18 +34,17 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: true,
         toolbarHeight: 60,
         backgroundColor: backgroundColor,
         scrolledUnderElevation: 0,
         title: Container(
           margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
-        ),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          child: Image.asset(
+            'assets/Logo_PNP_Light.png',
+            width: 100,
+            height: 100,
+          ),
         ),
         actions: [
           GestureDetector(
@@ -54,7 +53,7 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
             },
             child: Container(
               margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
-              width: 90,
+              width: 150,
               height: 45,
               decoration: const BoxDecoration(
                 color: primaryColor,
@@ -65,6 +64,28 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  Text(
+                    '$coins',
+                    style: GoogleFonts.poppins(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: backgroundColor),
+                  ),
+                  Container(
+                    height: 32,
+                    width: 32,
+                    decoration: const BoxDecoration(
+                      color: backgroundColor,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(100),
+                      ),
+                    ),
+                    child: Image.asset(
+                      'assets/coin.png',
+                      width: 32,
+                      height: 32,
+                    ),
+                  ),
                   Text(
                     '$slices',
                     style: GoogleFonts.poppins(
@@ -82,15 +103,15 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
                       ),
                     ),
                     child: Image.asset(
-                      'assets/coin.png', //placeholder pizza icon
-                      width: 32,
-                      height: 32,
+                      'assets/slices.png',
+                      width: 16,
+                      height: 16,
                     ),
                   )
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
       body: SingleChildScrollView(

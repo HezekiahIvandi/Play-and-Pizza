@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
       ),
       home: const AuthStateWrapper(),
       routes: {
+        '/auth': (context) => const AuthStateWrapper(),
         '/home': (context) => const PagesLayout(page: 0),
         '/login': (context) => LoginScreen(),
         '/signup': (context) => SignupScreen()

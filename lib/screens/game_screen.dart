@@ -36,7 +36,7 @@ class _GammeScreenState extends State<GammeScreen> {
             },
             child: Container(
               margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
-              width: 90,
+              width: 150,
               height: 45,
               decoration: const BoxDecoration(
                 color: primaryColor,
@@ -68,6 +68,28 @@ class _GammeScreenState extends State<GammeScreen> {
                       width: 32,
                       height: 32,
                     ),
+                  ),
+                  Text(
+                    '$slices',
+                    style: GoogleFonts.poppins(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: backgroundColor),
+                  ),
+                  Container(
+                    height: 32,
+                    width: 32,
+                    decoration: const BoxDecoration(
+                      color: backgroundColor,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(100),
+                      ),
+                    ),
+                    child: Image.asset(
+                      'assets/slices.png',
+                      width: 16,
+                      height: 16,
+                    ),
                   )
                 ],
               ),
@@ -81,8 +103,8 @@ class _GammeScreenState extends State<GammeScreen> {
           margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: const Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
-            spacing: 20,
-            runSpacing: 20,
+            spacing: 16,
+            runSpacing: 16,
             children: [
               GamesWidget(
                 gameImage: '',

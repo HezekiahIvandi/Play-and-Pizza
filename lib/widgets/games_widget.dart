@@ -16,8 +16,8 @@ class GamesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 175,
-      height: 175,
+      width: 150,
+      height: 150,
       child: Stack(
         children: [
           SizedBox(

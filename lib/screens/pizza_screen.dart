@@ -35,7 +35,7 @@ class _PizzaScreenState extends State<PizzaScreen> {
             },
             child: Container(
               margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
-              width: 90,
+              width: 150,
               height: 45,
               decoration: const BoxDecoration(
                 color: primaryColor,
@@ -46,6 +46,28 @@ class _PizzaScreenState extends State<PizzaScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  Text(
+                    '$coins',
+                    style: GoogleFonts.poppins(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: backgroundColor),
+                  ),
+                  Container(
+                    height: 32,
+                    width: 32,
+                    decoration: const BoxDecoration(
+                      color: backgroundColor,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(100),
+                      ),
+                    ),
+                    child: Image.asset(
+                      'assets/coin.png',
+                      width: 32,
+                      height: 32,
+                    ),
+                  ),
                   Text(
                     '$slices',
                     style: GoogleFonts.poppins(
@@ -63,9 +85,9 @@ class _PizzaScreenState extends State<PizzaScreen> {
                       ),
                     ),
                     child: Image.asset(
-                      'assets/coin.png', //placeholder pizza icon
-                      width: 32,
-                      height: 32,
+                      'assets/slices.png',
+                      width: 16,
+                      height: 16,
                     ),
                   )
                 ],

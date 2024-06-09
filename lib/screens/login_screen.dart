@@ -113,10 +113,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           borderRadius: BorderRadius.circular(
                               8.0), // Adjust this value to change the roundedness
                         ),
-                        padding: const EdgeInsets.symmetric(horizontal: 105),
                       ),
                       onPressed: _login,
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text('Masuk ke Beranda'),
                           const SizedBox(width: 10),
@@ -165,6 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (user != null) {
       log('User logged in successfully');
+      Navigator.pushNamed(context, '/auth');
     }
   }
 }

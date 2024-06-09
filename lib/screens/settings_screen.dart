@@ -33,87 +33,67 @@ class _SettingsScreenState extends State<SettingsScreen> {
             onTap: () {
               // Redirect Ke Top UP
             },
-            child: Row(
-              children: [
-                Container(
-                margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
-                width: 90,
-                height: 45,
-                decoration: const BoxDecoration(
-                  color: primaryColor,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(100),
-                  ),
+            child: Container(
+              margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
+              width: 150,
+              height: 45,
+              decoration: const BoxDecoration(
+                color: primaryColor,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(100),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      '$coins',
-                      style: GoogleFonts.poppins(
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    '$coins',
+                    style: GoogleFonts.poppins(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                         color: backgroundColor),
+                  ),
+                  Container(
+                    height: 32,
+                    width: 32,
+                    decoration: const BoxDecoration(
+                      color: backgroundColor,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(100),
+                      ),
                     ),
-                    Container(
-                      height: 32,
+                    child: Image.asset(
+                      'assets/coin.png',
                       width: 32,
-                      decoration: const BoxDecoration(
-                        color: backgroundColor,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(100),
-                        ),
-                      ),
-                      child: Image.asset(
-                        'assets/coin.png',
-                        width: 32,
-                        height: 32,
-                      ),
-                     )
-                    ],
+                      height: 32,
+                    ),
                   ),
-                ),
-                Container(
-                margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
-                width: 90,
-                height: 45,
-                decoration: const BoxDecoration(
-                  color: primaryColor,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(100),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      '$slices',
-                      style: GoogleFonts.poppins(
+                  Text(
+                    '$slices',
+                    style: GoogleFonts.poppins(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                         color: backgroundColor),
-                    ),
-                    Container(
-                      height: 32,
-                      width: 32,
-                      decoration: const BoxDecoration(
-                        color: backgroundColor,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(100),
-                        ),
-                      ),
-                      child: Image.asset(
-                        'assets/coin.png', //placeholder pizza icon
-                        width: 32,
-                        height: 32,
-                      ),
-                     )
-                    ],
                   ),
-                ),
-              ],
-            )
-          )
+                  Container(
+                    height: 32,
+                    width: 32,
+                    decoration: const BoxDecoration(
+                      color: backgroundColor,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(100),
+                      ),
+                    ),
+                    child: Image.asset(
+                      'assets/slices.png',
+                      width: 16,
+                      height: 16,
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
         ],
       ),
       body: Align(
@@ -124,7 +104,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
             child: Column(
               children: [
                 Container(
-                  margin: const EdgeInsets.only(top: 28),
                   height: 240,
                   width: 360,
                   decoration: BoxDecoration(
@@ -185,16 +164,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     size: 36,
                   ),
                   description: 'Metode Pembayaran',
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const SettingsWidget(
-                  icon: Icon(
-                    Icons.privacy_tip_outlined,
-                    size: 36,
-                  ),
-                  description: 'Privasi',
                 ),
                 const SizedBox(
                   height: 20,

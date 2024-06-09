@@ -17,6 +17,7 @@ class OnboardingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -55,7 +56,6 @@ class OnboardingPage extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 10),
           Center(
             child: Image.asset(
               imagePath,
@@ -63,7 +63,6 @@ class OnboardingPage extends StatelessWidget {
               height: 400,
             ),
           ),
-          const SizedBox(height: 10),
           ...texts.asMap().entries.map((entry) {
             int index = entry.key;
             String text = entry.value;
@@ -73,7 +72,6 @@ class OnboardingPage extends StatelessWidget {
               textAlign: TextAlign.center,
             );
           }).toList(),
-          const SizedBox(height: 60),
         ],
       ),
     );

@@ -90,6 +90,7 @@ flutter:
     - assets/Onboarding Illustration - 2.png
     - assets/Onboarding Illustration - 3.png
     - assets/coin.png
+    - assets/slices.png
     - assets/peperoni.png
     - assets/cheese_onions.png
     - assets/cheese_tomatoes.png
@@ -99,7 +100,6 @@ flutter:
     - assets/minigames.png
     - assets/profile.png
     - assets/Right Arrow.png
-    # - assets/Onboarding Illustration - 4.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
