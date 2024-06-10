@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playandpizza/main.dart';
-import 'package:playandpizza/screens/isi_saldo_1.dart';
+import 'package:playandpizza/model/user.dart' as model;
+import 'package:playandpizza/provider/user_provider.dart';
 import 'package:playandpizza/utils/color.dart';
+import 'package:playandpizza/widgets/appbar_isisaldo_widget.dart';
+import 'package:provider/provider.dart';
 
 class OrderPizzaPageScreen extends StatefulWidget {
   final String pizzaImage;
@@ -23,101 +26,24 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
   String get pizzaImage => widget.pizzaImage;
   String get pizzaName => widget.pizzaName;
   int get pizzaPrice => widget.pizzaPrice;
+  int _slices = 0;
   late int newSlices;
 
   @override
   void initState() {
     super.initState();
-    newSlices = slices - pizzaPrice;
   }
 
   @override
   Widget build(BuildContext context) {
+    Provider.of<UserProvider>(context, listen: false).refreshUser();
+    model.User? user = Provider.of<UserProvider>(context).getUser;
+    if (user?.username != null) {
+      _slices = user!.slices;
+      newSlices = _slices - pizzaPrice;
+    }
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        toolbarHeight: 60,
-        backgroundColor: backgroundColor,
-        scrolledUnderElevation: 0,
-        title: Container(
-          margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
-          child: Image.asset(
-            'assets/Logo_PNP_Light.png',
-            width: 100,
-            height: 100,
-          ),
-        ),
-        actions: [
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const IsiSaldo1()),
-              );
-            },
-            child: Container(
-              margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
-              width: 150,
-              height: 45,
-              decoration: const BoxDecoration(
-                color: primaryColor,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(100),
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text(
-                    '$coins',
-                    style: GoogleFonts.poppins(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: backgroundColor),
-                  ),
-                  Container(
-                    height: 32,
-                    width: 32,
-                    decoration: const BoxDecoration(
-                      color: backgroundColor,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(100),
-                      ),
-                    ),
-                    child: Image.asset(
-                      'assets/coin.png',
-                      width: 32,
-                      height: 32,
-                    ),
-                  ),
-                  Text(
-                    '$slices',
-                    style: GoogleFonts.poppins(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: backgroundColor),
-                  ),
-                  Container(
-                    height: 32,
-                    width: 32,
-                    decoration: const BoxDecoration(
-                      color: backgroundColor,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(100),
-                      ),
-                    ),
-                    child: Image.asset(
-                      'assets/slices.png',
-                      width: 16,
-                      height: 16,
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
+      appBar: const AppBarIsiSaldo(),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
@@ -313,7 +239,7 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
                                 Builder(builder: (context) {
                                   if (slices == 1) {
                                     return Text(
-                                      '$slices slice',
+                                      '$_slices slice',
                                       style: GoogleFonts.poppins(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w400,
@@ -322,7 +248,7 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
                                     );
                                   }
                                   return Text(
-                                    '$slices slices',
+                                    '$_slices slices',
                                     style: GoogleFonts.poppins(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,
@@ -392,7 +318,7 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
                                   ),
                                 ),
                                 Builder(builder: (context) {
-                                  if (slices == 1) {
+                                  if (_slices == 1) {
                                     return Text(
                                       '$newSlices slice',
                                       style: GoogleFonts.poppins(

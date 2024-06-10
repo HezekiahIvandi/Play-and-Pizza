@@ -1,5 +1,4 @@
 import 'dart:developer';
-import 'dart:ffi';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:playandpizza/model/user.dart' as model;
@@ -29,16 +28,20 @@ class AuthService {
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
 
-        //add user to the database
-        await _firestore.collection('users').doc(cred.user!.uid).set({
-          "username": username,
-          "uid": cred.user!.uid,
-          "email": email,
-          "photoUrl":
+         model.User user = model.User(
+          username: username,
+          uid: cred.user!.uid,
+          email: email,
+          photoUrl:
               'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfZCGFDrC8YeednlJC3mhxPfg_s4Pg8u7-kf6dy88&s',
-          "coins": 0,
-          "slices": 0,
-        });
+          coins: 0,
+          slices: 0,
+        );
+
+        //add user to the database
+        await _firestore.collection('users').doc(cred.user!.uid).set(
+          user.toJson(),
+        );
 
         res = "success";
       } else {

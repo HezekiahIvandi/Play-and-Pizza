@@ -1,8 +1,5 @@
-import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:playandpizza/screens/login_screen.dart';
 import 'package:playandpizza/screens/onboarding.dart';
 import 'package:playandpizza/screens/pages_layout.dart';
 
@@ -11,8 +8,7 @@ class AuthStateWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: StreamBuilder(
+    return StreamBuilder(
             stream: FirebaseAuth.instance.authStateChanges(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
@@ -30,6 +26,6 @@ class AuthStateWrapper extends StatelessWidget {
                   return const PagesLayout(page: 0);
                 }
               }
-            }));
+            },);
   }
 }

@@ -50,10 +50,10 @@ class _PagesLayoutState extends State<PagesLayout> {
         controller: pageController,
         onPageChanged: onPageChanged,
         physics: const NeverScrollableScrollPhysics(),
-        children: [
-          const HomeScreen(),
-          const GammeScreen(),
-          const PizzaScreen(),
+        children: const [
+          HomeScreen(),
+          GammeScreen(),
+          PizzaScreen(),
           SettingsScreen(),
         ],
       ),

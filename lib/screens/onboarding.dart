@@ -3,7 +3,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:playandpizza/screens/onboarding_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({Key? key}) : super(key: key);
+  const OnboardingScreen({super.key});
 
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
@@ -14,13 +14,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle topTextStyle = TextStyle(
+    TextStyle topTextStyle = const TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.w600,
       fontFamily: 'Poppins',
     );
 
-    TextStyle bottomTextStyle = TextStyle(
+    TextStyle bottomTextStyle = const TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w400,
       fontFamily: 'Poppins',
@@ -35,7 +35,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               children: [
                 OnboardingPage(
                   imagePath: 'assets/Onboarding Illustration - 1.png',
-                  texts: [
+                  texts: const [
                     'Mainkan Ragam Games',
                     'yang Menarik',
                     'menangkan dan kumpulkan tiket',
@@ -46,7 +46,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 OnboardingPage(
                   imagePath: 'assets/Onboarding Illustration - 2.png',
-                  texts: [
+                  texts: const [
                     'Menangkan Pizza dan',
                     'Hadiah Gratis',
                     'tukarkan tiket Anda dengan',
@@ -57,7 +57,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 OnboardingPage(
                   imagePath: 'assets/Onboarding Illustration - 3.png',
-                  texts: [
+                  texts: const [
                     'Nikmati Pizza Grais',
                     'sambil Bermain',
                     'mainkan games dan dapatkan',
@@ -141,7 +141,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
             ],
           ),
 

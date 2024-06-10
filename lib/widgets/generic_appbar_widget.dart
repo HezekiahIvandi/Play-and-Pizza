@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:playandpizza/model/user.dart' as model;
 import 'package:playandpizza/provider/user_provider.dart';
+import 'package:playandpizza/screens/isi_saldo_1.dart';
 import 'package:playandpizza/utils/color.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class AppBarIsiSaldo extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarIsiSaldo({
-    super.key,
+class GenericAppbarWidget extends StatelessWidget implements PreferredSizeWidget {
+  final Widget title;
+  const GenericAppbarWidget({
+    super.key, required this.title,
   });
 
   @override
@@ -23,13 +25,18 @@ class AppBarIsiSaldo extends StatelessWidget implements PreferredSizeWidget {
       slices = user.slices;
     }
     return AppBar(
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
         toolbarHeight: 60,
         backgroundColor: backgroundColor,
         scrolledUnderElevation: 0,
+        title: title,
         actions: [
           GestureDetector(
             onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const IsiSaldo1()),
+              );
             },
             child: Container(
               margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),

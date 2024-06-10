@@ -1,12 +1,11 @@
-import 'dart:developer';
 
 import 'package:playandpizza/widgets/auth_textfield.dart';
 import 'package:flutter/material.dart';
-import 'package:playandpizza/widgets/appbar_widget.dart';
+import 'package:playandpizza/widgets/auth_appbar_widget.dart';
 import 'package:playandpizza/resources/auth_service.dart';
 
 class SignupScreen extends StatefulWidget {
-  SignupScreen({super.key});
+  const SignupScreen({super.key});
 
   @override
   State<SignupScreen> createState() => _SignupScreenState();

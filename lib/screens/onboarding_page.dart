@@ -6,7 +6,7 @@ class OnboardingPage extends StatelessWidget {
   final TextStyle topTextStyle;
   final TextStyle bottomTextStyle;
 
-  const OnboardingPage({
+  const OnboardingPage({super.key, 
     required this.imagePath,
     required this.texts,
     required this.topTextStyle,
@@ -71,7 +71,7 @@ class OnboardingPage extends StatelessWidget {
               style: index < 2 ? topTextStyle : bottomTextStyle,
               textAlign: TextAlign.center,
             );
-          }).toList(),
+          }),
         ],
       ),
     );

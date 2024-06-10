@@ -2,12 +2,10 @@ import 'package:playandpizza/resources/auth_service.dart';
 import 'dart:developer';
 import 'package:playandpizza/widgets/auth_textfield.dart';
 import 'package:flutter/material.dart';
-import 'package:playandpizza/widgets/appbar_widget.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:playandpizza/widgets/auth_appbar_widget.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -53,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Container(
                 margin: const EdgeInsets.only(bottom: 8),
                 child: const Text(
-                  'Username',
+                  'Email',
                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
                 ),
               ),
