@@ -41,7 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
       _slices = user.slices;
     }
     return Scaffold(
-      appBar: GenericAppbarWidget(title: Container(
+      appBar: GenericAppbarWidget(
+        title: Container(
           margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
           child: Text(
             "Hallo $_username!",
@@ -50,7 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
               fontWeight: FontWeight.w500,
             ),
           ),
-        ),),
+        ),
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
@@ -132,26 +134,32 @@ class _HomeScreenState extends State<HomeScreen> {
                     PizzaHomeWidget(
                       pizzaImage: 'assets/peperoni.png',
                       pizzaName: 'Peperoni',
+                      pizzaPrice: 8,
                     ),
                     PizzaHomeWidget(
                       pizzaImage: 'assets/cheese_onions.png',
                       pizzaName: 'Keju & Bawang',
+                      pizzaPrice: 6,
                     ),
                     PizzaHomeWidget(
                       pizzaImage: 'assets/mushroom.png',
                       pizzaName: 'Jamur',
+                      pizzaPrice: 6,
                     ),
                     PizzaHomeWidget(
                       pizzaImage: 'assets/cheese_tomatoes.png',
                       pizzaName: 'Keju & Tomat',
+                      pizzaPrice: 8,
                     ),
                     PizzaHomeWidget(
                       pizzaImage: 'assets/double_cheese.png',
                       pizzaName: 'Keju Mozarella',
+                      pizzaPrice: 8,
                     ),
                     PizzaHomeWidget(
                       pizzaImage: 'assets/nuggets.png',
                       pizzaName: 'Nuget Ayam',
+                      pizzaPrice: 8,
                     ),
                   ],
                 ),
