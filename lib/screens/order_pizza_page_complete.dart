@@ -1,0 +1,123 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:playandpizza/screens/pages_layout.dart';
+import 'package:playandpizza/widgets/appbar_isisaldo_widget.dart';
+import 'package:playandpizza/utils/color.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:playandpizza/model/user.dart' as model;
+import 'package:playandpizza/provider/user_provider.dart';
+import 'package:provider/provider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+class OrderPizzaPageComplete extends StatefulWidget {
+  final int newSlices;
+  const OrderPizzaPageComplete({
+    super.key,
+    required this.newSlices,
+  });
+
+  @override
+  State<OrderPizzaPageComplete> createState() => _OrderPizzaPageCompleteState();
+}
+
+void updateCoins(newSlices) async {
+  FirebaseFirestore.instance
+      .collection('users')
+      .doc(FirebaseAuth.instance.currentUser!.uid)
+      .update({'slices': newSlices});
+}
+
+class _OrderPizzaPageCompleteState extends State<OrderPizzaPageComplete> {
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
+  initState() {
+    super.initState();
+  }
+
+  bool updated = false;
+
+  @override
+  Widget build(BuildContext context) {
+    Provider.of<UserProvider>(context, listen: false).refreshUser();
+    model.User? user = Provider.of<UserProvider>(context).getUser;
+    if (user?.username != null) {
+      if (!updated) {
+        updateCoins(widget.newSlices);
+        updated = true;
+      }
+    }
+
+    return Scaffold(
+        resizeToAvoidBottomInset: false,
+        appBar: const AppBarIsiSaldo(),
+        body: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 18),
+          padding: const EdgeInsets.only(bottom: 10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 70,
+              ),
+              Center(
+                child: Image.asset(
+                  'assets/success.png',
+                  width: 256,
+                  height: 256,
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Center(
+                child: Text(
+                  'PEMBAYARAN\nPIZZA BERHASIL',
+                  style: GoogleFonts.poppins(
+                    fontSize: 45,
+                    fontWeight: FontWeight.w700,
+                    color: const Color.fromARGB(255, 64, 81, 59),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Center(
+                child: SizedBox(
+                  width: 280,
+                  height: 60,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const PagesLayout(page: 0)),
+                      );
+                    },
+                    style: TextButton.styleFrom(
+                      backgroundColor: primaryColor,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                      ),
+                    ),
+                    child: Text(
+                      'Kembali ke beranda',
+                      style: GoogleFonts.poppins(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                          color: backgroundColor),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ));
+  }
+}

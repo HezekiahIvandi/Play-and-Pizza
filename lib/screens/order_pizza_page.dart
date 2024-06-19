@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:playandpizza/main.dart';
 import 'package:playandpizza/model/user.dart' as model;
 import 'package:playandpizza/provider/user_provider.dart';
+import 'package:playandpizza/screens/order_pizza_page_complete.dart';
 import 'package:playandpizza/utils/color.dart';
 import 'package:playandpizza/widgets/appbar_isisaldo_widget.dart';
 import 'package:provider/provider.dart';
@@ -42,6 +43,7 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
       _slices = user!.slices;
       newSlices = _slices - pizzaPrice;
     }
+
     return Scaffold(
       appBar: const AppBarIsiSaldo(),
       body: SingleChildScrollView(
@@ -359,7 +361,13 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
               borderRadius: BorderRadius.all(Radius.circular(8)),
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        OrderPizzaPageComplete(newSlices: newSlices)));
+          },
           child: Center(
             child: Text(
               'Lakukan pemesanan',

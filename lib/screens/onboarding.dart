@@ -38,7 +38,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   texts: const [
                     'Mainkan Ragam Games',
                     'yang Menarik',
-                    'menangkan dan kumpulkan tiket',
+                    'Menangkan dan kumpulkan tiket',
                     'sebanyak-banyaknya!'
                   ],
                   topTextStyle: topTextStyle,
@@ -49,7 +49,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   texts: const [
                     'Menangkan Pizza dan',
                     'Hadiah Gratis',
-                    'tukarkan tiket Anda dengan',
+                    'Tukarkan tiket Anda dengan',
                     'beragam pilihan pizza dan hadiah'
                   ],
                   topTextStyle: topTextStyle,
@@ -60,7 +60,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   texts: const [
                     'Nikmati Pizza Grais',
                     'sambil Bermain',
-                    'mainkan games dan dapatkan',
+                    'Mainkan games dan dapatkan',
                     'pizza gratis hanya di Play &'
                   ],
                   topTextStyle: topTextStyle,
@@ -69,83 +69,88 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ],
             ),
           ),
+          const Text('SD Tadika Mesra',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w400,
+                fontFamily: 'Poppins',
+              )),
+          const SizedBox(height: 20),
           Flex(
             direction: Axis.vertical,
             children: [
               SizedBox(
-            height: 20,
-            child: SmoothPageIndicator(
-              controller: _pageController,
-              count: 3,
-              effect: const JumpingDotEffect(
-                activeDotColor: Color(0xFFBD0000),
-                dotColor: Color(0xFFFFC1C1),
-                dotHeight: 10,
-                dotWidth: 10,
-              ),
-            ),
-          ),
-          const SizedBox(height: 20),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.9,
-            child: ElevatedButton(
-              onPressed: () {
-                // Halaman Registration
-                Navigator.pushNamed(context, '/signup');
-              },
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.all(10),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(4),
-                  side: const BorderSide(width: 1, color: Colors.white),
-                ),
-                backgroundColor: const Color(0xFFBD0000),
-              ),
-              child: const Text(
-                'Gabung Sekarang',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                'Sudah punya akun?',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black,
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  // Log In
-                  Navigator.pushNamed(context, '/login');
-                },
-                style: TextButton.styleFrom(
-                  padding: const EdgeInsets.all(0),
-                ),
-                child: const Text(
-                  ' Masuk disini',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xFFBD0000),
+                height: 20,
+                child: SmoothPageIndicator(
+                  controller: _pageController,
+                  count: 3,
+                  effect: const JumpingDotEffect(
+                    activeDotColor: Color(0xFFBD0000),
+                    dotColor: Color(0xFFFFC1C1),
+                    dotHeight: 10,
+                    dotWidth: 10,
                   ),
                 ),
               ),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.9,
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Halaman Registration
+                    Navigator.pushNamed(context, '/signup');
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.all(10),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4),
+                      side: const BorderSide(width: 1, color: Colors.white),
+                    ),
+                    backgroundColor: const Color(0xFFBD0000),
+                  ),
+                  child: const Text(
+                    'Gabung Sekarang',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Sudah punya akun?',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      // Log In
+                      Navigator.pushNamed(context, '/login');
+                    },
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.all(0),
+                    ),
+                    child: const Text(
+                      ' Masuk disini',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFFBD0000),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
             ],
           ),
-          const SizedBox(height: 20),
-            ],
-          ),
-
-          
         ],
       ),
     );
