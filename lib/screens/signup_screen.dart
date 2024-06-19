@@ -1,4 +1,3 @@
-
 import 'package:playandpizza/widgets/auth_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:playandpizza/widgets/auth_appbar_widget.dart';
@@ -55,13 +54,13 @@ class _SignupScreenState extends State<SignupScreen> {
               Container(
                 margin: const EdgeInsets.only(bottom: 8),
                 child: const Text(
-                  'Username',
+                  'Nama Akun',
                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
                 ),
               ),
               AuthTextfield(
                 controller: _usernameController,
-                hintText: 'Username',
+                hintText: 'Nama Akun',
                 obscureText: false,
               ),
               const SizedBox(height: 10),
@@ -85,13 +84,13 @@ class _SignupScreenState extends State<SignupScreen> {
               Container(
                 margin: const EdgeInsets.only(bottom: 8),
                 child: const Text(
-                  'Password',
+                  'Kata Sandi',
                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
                 ),
               ),
               AuthTextfield(
                 controller: _pwController,
-                hintText: 'Password',
+                hintText: 'Kata Sandi',
                 obscureText: true,
               ),
               const SizedBox(height: 10),
@@ -100,13 +99,13 @@ class _SignupScreenState extends State<SignupScreen> {
               Container(
                 margin: const EdgeInsets.only(bottom: 8),
                 child: const Text(
-                  'Konfirmasi password',
+                  'Konfirmasi Kata Sandi',
                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
                 ),
               ),
               AuthTextfield(
                 controller: _konfirmasiPwController,
-                hintText: 'Konfirmasi password',
+                hintText: 'Konfirmasi Kata Sandi',
                 obscureText: true,
               ),
               const SizedBox(height: 10),
@@ -121,25 +120,29 @@ class _SignupScreenState extends State<SignupScreen> {
                 alignment: Alignment.bottomCenter,
                 child: Column(
                   children: [
-                    FilledButton(
-                      style: FilledButton.styleFrom(
-                        backgroundColor:
-                            const Color(0xFFBD0000), // Hex color code
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              8.0), // Adjust this value to change the roundedness
-                        ),
-                      ),
-                      onPressed: _signup,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text('Gabung sekarang'),
-                          const SizedBox(width: 10),
-                          Image.asset(
-                            'assets/Right Arrow.png',
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          _signup;
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.all(10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4),
+                            side:
+                                const BorderSide(width: 1, color: Colors.white),
                           ),
-                        ],
+                          backgroundColor: const Color(0xFFBD0000),
+                        ),
+                        child: const Text(
+                          'Gabung Sekarang',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
                     ),
                     Row(

@@ -109,7 +109,13 @@ flutter:
     - assets/shopeepay.png
     - assets/slices.png
     - assets/success.png
-    # - assets/Onboarding Illustration - 4.png
+    - assets/pizza_ticket.png
+    - assets/pizza_game_1.jpg
+    - assets/pizza_game_2.jpg
+    - assets/pizza_game_3.jpg
+    - assets/pizza_game_4.jpg
+    - assets/pizza_game_5.jpg
+    - assets/pizza_game_6.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

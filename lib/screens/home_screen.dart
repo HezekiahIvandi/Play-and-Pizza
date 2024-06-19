@@ -72,24 +72,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 runSpacing: 16,
                 children: [
                   GamesWidget(
-                    gameImage: '',
+                    gameImage: 'assets/pizza_game_1.jpg',
                     gameName: 'Minigame 1',
-                    gamePrice: '1 coins',
+                    gamePrice: '1 koin',
                   ),
                   GamesWidget(
-                    gameImage: '',
+                    gameImage: 'assets/pizza_game_2.jpg',
                     gameName: 'Minigame 2',
-                    gamePrice: '2 coins',
+                    gamePrice: '2 koin',
                   ),
                   GamesWidget(
-                    gameImage: '',
+                    gameImage: 'assets/pizza_game_3.jpg',
                     gameName: 'Minigame 3',
-                    gamePrice: '1 coins',
+                    gamePrice: '1 koin',
                   ),
                   GamesWidget(
-                    gameImage: '',
+                    gameImage: 'assets/pizza_game_4.jpg',
                     gameName: 'Minigame 4',
-                    gamePrice: '3 coins',
+                    gamePrice: '3 koin',
                   ),
                 ],
               ),

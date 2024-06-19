@@ -66,13 +66,13 @@ class _LoginScreenState extends State<LoginScreen> {
               Container(
                 margin: const EdgeInsets.only(bottom: 8),
                 child: const Text(
-                  'Password',
+                  'Kata Sandi',
                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
                 ),
               ),
               AuthTextfield(
                 controller: _pwController,
-                hintText: 'Password',
+                hintText: 'Kata Sandi',
                 obscureText: true,
               ),
               const SizedBox(height: 10),
@@ -103,25 +103,29 @@ class _LoginScreenState extends State<LoginScreen> {
               Center(
                 child: Column(
                   children: [
-                    FilledButton(
-                      style: FilledButton.styleFrom(
-                        backgroundColor:
-                            const Color(0xFFBD0000), // Hex color code
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              8.0), // Adjust this value to change the roundedness
-                        ),
-                      ),
-                      onPressed: _login,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text('Masuk ke Beranda'),
-                          const SizedBox(width: 10),
-                          Image.asset(
-                            'assets/Right Arrow.png',
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          _login;
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.all(10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4),
+                            side:
+                                const BorderSide(width: 1, color: Colors.white),
                           ),
-                        ],
+                          backgroundColor: const Color(0xFFBD0000),
+                        ),
+                        child: const Text(
+                          'Masuk ke Beranda',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
                     ),
                     Row(

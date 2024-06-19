@@ -6,7 +6,8 @@ class OnboardingPage extends StatelessWidget {
   final TextStyle topTextStyle;
   final TextStyle bottomTextStyle;
 
-  const OnboardingPage({super.key, 
+  const OnboardingPage({
+    super.key,
     required this.imagePath,
     required this.texts,
     required this.topTextStyle,

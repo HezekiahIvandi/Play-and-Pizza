@@ -26,7 +26,7 @@ class GamesWidget extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.asset(
-                'assets/minigames.png',
+                gameImage,
                 fit: BoxFit.cover,
               ),
             ),

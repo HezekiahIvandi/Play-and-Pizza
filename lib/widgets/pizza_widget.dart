@@ -63,7 +63,7 @@ class PizzaWidget extends StatelessWidget {
                             );
                           }
                           return Text(
-                            '$pizzaPrice slices',
+                            '$pizzaPrice tiket',
                             style: GoogleFonts.poppins(
                               fontSize: 16,
                               fontWeight: FontWeight.w400,

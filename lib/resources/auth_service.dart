@@ -7,11 +7,19 @@ class AuthService {
   final _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  Future<model.User> getUserDetails() async {
-    User currentUser = _auth.currentUser!;
+  Future<model.User?> getUserDetails() async {
+    User? currentUser = _auth.currentUser;
+
+    if (currentUser == null) {
+      return null;
+    }
 
     DocumentSnapshot snap =
         await _firestore.collection('users').doc(currentUser.uid).get();
+
+    if (!snap.exists) {
+      return null;
+    }
 
     return model.User.fromSnap(snap);
   }
@@ -28,7 +36,7 @@ class AuthService {
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
 
-         model.User user = model.User(
+        model.User user = model.User(
           username: username,
           uid: cred.user!.uid,
           email: email,
@@ -40,8 +48,8 @@ class AuthService {
 
         //add user to the database
         await _firestore.collection('users').doc(cred.user!.uid).set(
-          user.toJson(),
-        );
+              user.toJson(),
+            );
 
         res = "success";
       } else {

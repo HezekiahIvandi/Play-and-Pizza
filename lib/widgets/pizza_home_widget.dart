@@ -20,7 +20,7 @@ class PizzaHomeWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(right: 12, bottom: 20),
       width: 150,
-      height: 220,
+      height: 240,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: pizzaWidgetBackgroud,
@@ -53,7 +53,7 @@ class PizzaHomeWidget extends StatelessWidget {
             height: 4,
           ),
           Container(
-            margin: const EdgeInsets.only(left: 6),
+            padding: const EdgeInsets.symmetric(horizontal: 12),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,7 +75,7 @@ class PizzaHomeWidget extends StatelessWidget {
                     );
                   } else {
                     return Text(
-                      '$pizzaPrice slices',
+                      '$pizzaPrice tiket',
                       style: GoogleFonts.poppins(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
@@ -84,38 +84,40 @@ class PizzaHomeWidget extends StatelessWidget {
                     );
                   }
                 })),
-                const SizedBox(height: 0),
-                SizedBox(
-                  height: 24,
-                  width: 45,
-                  child: FilledButton(
-                    style: FilledButton.styleFrom(
-                      backgroundColor: primaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(6.0),
-                      ),
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => OrderPizzaPageScreen(
-                                  pizzaImage: pizzaImage,
-                                  pizzaName: pizzaName,
-                                  pizzaPrice: pizzaPrice,
-                                )),
-                      );
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Beli',
-                          style: GoogleFonts.poppins(
-                              fontSize: 12, fontWeight: FontWeight.w600),
+                const SizedBox(height: 6),
+                Center(
+                  child: SizedBox(
+                    height: 28,
+                    width: double.infinity,
+                    child: FilledButton(
+                      style: FilledButton.styleFrom(
+                        backgroundColor: primaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6.0),
                         ),
-                      ],
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => OrderPizzaPageScreen(
+                                    pizzaImage: pizzaImage,
+                                    pizzaName: pizzaName,
+                                    pizzaPrice: pizzaPrice,
+                                  )),
+                        );
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Beli',
+                            style: GoogleFonts.poppins(
+                                fontSize: 12, fontWeight: FontWeight.w600),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

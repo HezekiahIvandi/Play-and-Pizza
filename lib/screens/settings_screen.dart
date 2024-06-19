@@ -17,7 +17,8 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   final _auth = AuthService();
   String _username = "pengguna";
-  String _photoUrl = '';
+  String _photoUrl =
+      'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png';
   int _coins = 0;
   int _slices = 0;
 
@@ -32,14 +33,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
       _photoUrl = user.photoUrl;
     }
     return Scaffold(
-      appBar: GenericAppbarWidget(title: Container(
+      appBar: GenericAppbarWidget(
+        title: Container(
           margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
           child: Image.asset(
             'assets/Logo_PNP_Light.png',
             width: 100,
             height: 100,
           ),
-        ),),
+        ),
+      ),
       body: Align(
         alignment: Alignment.center,
         child: Container(
@@ -127,7 +130,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     Icons.logout_outlined,
                     size: 36,
                   ),
-                  description: 'Logout',
+                  description: 'Keluar',
                   buttonFunction: () async {
                     await _auth.signout();
                   },

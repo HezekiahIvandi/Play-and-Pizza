@@ -69,16 +69,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ],
             ),
           ),
-          const Text('SD Tadika Mesra',
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w400,
-                fontFamily: 'Poppins',
-              )),
-          const SizedBox(height: 20),
           Flex(
             direction: Axis.vertical,
             children: [
+              const SizedBox(
+                height: 4,
+              ),
               SizedBox(
                 height: 20,
                 child: SmoothPageIndicator(
@@ -92,7 +88,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 12),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: ElevatedButton(
@@ -118,6 +114,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                 ),
               ),
+              const SizedBox(height: 4),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -148,9 +145,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
             ],
           ),
+          const Text(
+            'Created by SD Tadika Mesra',
+            style: TextStyle(
+                fontSize: 10,
+                fontWeight: FontWeight.w400,
+                fontFamily: 'Poppins',
+                color: Colors.black),
+          ),
+          const SizedBox(
+            height: 8,
+          )
         ],
       ),
     );
