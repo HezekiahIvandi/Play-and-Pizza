@@ -140,7 +140,9 @@ class _IsiSaldo2State extends State<IsiSaldo2> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const IsiSaldo3()),
+                          builder: (context) => IsiSaldo3(
+                                selectedOption: _selectedOption,
+                              )),
                     );
                   },
                   style: TextButton.styleFrom(

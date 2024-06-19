@@ -6,7 +6,11 @@ import 'package:playandpizza/utils/color.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class IsiSaldo3 extends StatefulWidget {
-  const IsiSaldo3({super.key});
+  final int selectedOption;
+  const IsiSaldo3({
+    super.key,
+    required this.selectedOption,
+  });
 
   @override
   State<IsiSaldo3> createState() => _IsiSaldo3State();
@@ -85,7 +89,9 @@ class _IsiSaldo3State extends State<IsiSaldo3> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const IsiSaldo4()),
+                          builder: (context) => IsiSaldo4(
+                                selectedOption: widget.selectedOption,
+                              )),
                     );
                   },
                   style: TextButton.styleFrom(
