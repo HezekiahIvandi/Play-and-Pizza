@@ -170,7 +170,7 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
                                 SizedBox(child: Builder(builder: (context) {
                                   if (pizzaPrice == 1) {
                                     return Text(
-                                      '$pizzaPrice slice',
+                                      '$pizzaPrice tiket',
                                       style: GoogleFonts.poppins(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w400,
@@ -179,7 +179,7 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
                                     );
                                   }
                                   return Text(
-                                    '$pizzaPrice slices',
+                                    '$pizzaPrice tiket',
                                     style: GoogleFonts.poppins(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,
@@ -259,7 +259,7 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
                                     );
                                   }
                                   return Text(
-                                    '$_slices slices',
+                                    '$_slices tiket',
                                     style: GoogleFonts.poppins(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,
@@ -295,7 +295,7 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
                                     );
                                   }
                                   return Text(
-                                    '$pizzaPrice slices',
+                                    '$pizzaPrice tiket',
                                     style: GoogleFonts.poppins(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,
@@ -331,7 +331,7 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
                                 Builder(builder: (context) {
                                   if (_slices == 1) {
                                     return Text(
-                                      '$newSlices slice',
+                                      '$newSlices tiket',
                                       style: GoogleFonts.poppins(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w400,
@@ -340,7 +340,7 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
                                     );
                                   }
                                   return Text(
-                                    '$newSlices slices',
+                                    '$newSlices tiket',
                                     style: GoogleFonts.poppins(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,

@@ -16,7 +16,7 @@ class _PizzaScreenState extends State<PizzaScreen> {
   String _username = "pengguna";
   int _coins = 0;
   int _slices = 0;
-  
+
   @override
   Widget build(BuildContext context) {
     Provider.of<UserProvider>(context, listen: false).refreshUser();
@@ -27,14 +27,16 @@ class _PizzaScreenState extends State<PizzaScreen> {
       _slices = user.slices;
     }
     return Scaffold(
-      appBar: GenericAppbarWidget( title: Container(
+      appBar: GenericAppbarWidget(
+        title: Container(
           margin: const EdgeInsets.fromLTRB(4, 0, 0, 0),
           child: Image.asset(
             'assets/Logo_PNP_Light.png',
             width: 100,
             height: 100,
           ),
-        ),),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -46,32 +48,32 @@ class _PizzaScreenState extends State<PizzaScreen> {
               PizzaWidget(
                 pizzaImage: 'assets/peperoni.png',
                 pizzaName: 'Peperoni',
-                pizzaPrice: 8,
+                pizzaPrice: 24,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/cheese_onions.png',
                 pizzaName: 'Keju & Bawang',
-                pizzaPrice: 6,
+                pizzaPrice: 20,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/mushroom.png',
                 pizzaName: 'Jamur',
-                pizzaPrice: 6,
+                pizzaPrice: 20,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/cheese_tomatoes.png',
                 pizzaName: 'Keju & Tomat',
-                pizzaPrice: 8,
+                pizzaPrice: 18,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/double_cheese.png',
                 pizzaName: 'Keju Mozarella',
-                pizzaPrice: 8,
+                pizzaPrice: 22,
               ),
               PizzaWidget(
                 pizzaImage: 'assets/nuggets.png',
                 pizzaName: 'Nuget Ayam',
-                pizzaPrice: 8,
+                pizzaPrice: 24,
               ),
             ],
           ),

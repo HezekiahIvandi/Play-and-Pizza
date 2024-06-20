@@ -107,7 +107,7 @@ class GamesWidget extends StatelessWidget {
                     onPressed: () {
                       if (user != null && newCoins >= 0) {
                         updateCoins(newCoins);
-                        int newSlices = slices + 5;
+                        int newSlices = slices + (gamePrice * 2);
                         updateSlices(newSlices);
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
