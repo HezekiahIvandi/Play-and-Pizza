@@ -62,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 10),
 
-              //PASSWORD
+              //Kata Sandi
               Container(
                 margin: const EdgeInsets.only(bottom: 8),
                 child: const Text(
@@ -103,29 +103,25 @@ class _LoginScreenState extends State<LoginScreen> {
               Center(
                 child: Column(
                   children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.9,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          _login;
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.all(10),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4),
-                            side:
-                                const BorderSide(width: 1, color: Colors.white),
-                          ),
-                          backgroundColor: const Color(0xFFBD0000),
+                    FilledButton(
+                      style: FilledButton.styleFrom(
+                        backgroundColor:
+                            const Color(0xFFBD0000), // Hex color code
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              4.0), // Adjust this value to change the roundedness
                         ),
-                        child: const Text(
-                          'Masuk ke Beranda',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
+                      ),
+                      onPressed: _login,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text('Masuk ke Beranda'),
+                          const SizedBox(width: 10),
+                          Image.asset(
+                            'assets/Right Arrow.png',
                           ),
-                        ),
+                        ],
                       ),
                     ),
                     Row(
@@ -167,7 +163,13 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (user != null) {
       log('User logged in successfully');
-      Navigator.pushNamed(context, '/auth');
+      Navigator.pushReplacementNamed(context, '/auth');
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Gagal Masuk'),
+        ),
+      );
     }
   }
 }

@@ -1,6 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:playandpizza/main.dart';
 import 'package:playandpizza/model/user.dart' as model;
 import 'package:playandpizza/provider/user_provider.dart';
 import 'package:playandpizza/screens/order_pizza_page_complete.dart';
@@ -43,7 +44,6 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
       _slices = user!.slices;
       newSlices = _slices - pizzaPrice;
     }
-
     return Scaffold(
       appBar: const AppBarIsiSaldo(),
       body: SingleChildScrollView(
@@ -75,6 +75,9 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
                 ],
               ),
             ),
+            const SizedBox(
+              height: 12,
+            ),
             Align(
               alignment: Alignment.bottomRight,
               child: TextButton(
@@ -97,12 +100,18 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 4,
+            ),
             Container(
               margin: const EdgeInsets.only(top: 8, bottom: 16),
               height: 1,
               width: double.infinity,
               decoration: const BoxDecoration(
                   border: BorderDirectional(top: BorderSide(width: 1))),
+            ),
+            const SizedBox(
+              height: 4,
             ),
             Container(
                 decoration: BoxDecoration(
@@ -239,7 +248,7 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
                                   ),
                                 ),
                                 Builder(builder: (context) {
-                                  if (slices == 1) {
+                                  if (_slices == 1) {
                                     return Text(
                                       '$_slices slice',
                                       style: GoogleFonts.poppins(
@@ -362,11 +371,19 @@ class _OrderPizzaPageScreenState extends State<OrderPizzaPageScreen> {
             ),
           ),
           onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        OrderPizzaPageComplete(newSlices: newSlices)));
+            if (newSlices >= 0) {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          OrderPizzaPageComplete(newSlices: newSlices)));
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('Tiket tidak cukup'),
+                ),
+              );
+            }
           },
           child: Center(
             child: Text(

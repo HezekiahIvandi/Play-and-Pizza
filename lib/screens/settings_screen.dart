@@ -132,7 +132,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                   description: 'Keluar',
                   buttonFunction: () async {
-                    await _auth.signout();
+                    if (user != null) {
+                      await _auth.signout();
+                    } else {
+                      Navigator.pushReplacementNamed(context, '/onboarding');
+                    }
                   },
                 ),
               ],

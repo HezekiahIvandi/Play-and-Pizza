@@ -74,22 +74,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   GamesWidget(
                     gameImage: 'assets/pizza_game_1.jpg',
                     gameName: 'Minigame 1',
-                    gamePrice: '1 koin',
+                    gamePrice: 1,
                   ),
                   GamesWidget(
                     gameImage: 'assets/pizza_game_2.jpg',
                     gameName: 'Minigame 2',
-                    gamePrice: '2 koin',
+                    gamePrice: 2,
                   ),
                   GamesWidget(
                     gameImage: 'assets/pizza_game_3.jpg',
                     gameName: 'Minigame 3',
-                    gamePrice: '1 koin',
+                    gamePrice: 1,
                   ),
                   GamesWidget(
                     gameImage: 'assets/pizza_game_4.jpg',
                     gameName: 'Minigame 4',
-                    gamePrice: '3 koin',
+                    gamePrice: 3,
                   ),
                 ],
               ),

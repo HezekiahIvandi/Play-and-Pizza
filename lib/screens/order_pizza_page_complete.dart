@@ -20,7 +20,7 @@ class OrderPizzaPageComplete extends StatefulWidget {
   State<OrderPizzaPageComplete> createState() => _OrderPizzaPageCompleteState();
 }
 
-void updateCoins(newSlices) async {
+void updateSlices(newSlices) async {
   FirebaseFirestore.instance
       .collection('users')
       .doc(FirebaseAuth.instance.currentUser!.uid)
@@ -46,7 +46,7 @@ class _OrderPizzaPageCompleteState extends State<OrderPizzaPageComplete> {
     model.User? user = Provider.of<UserProvider>(context).getUser;
     if (user?.username != null) {
       if (!updated) {
-        updateCoins(widget.newSlices);
+        updateSlices(widget.newSlices);
         updated = true;
       }
     }

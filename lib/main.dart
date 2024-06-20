@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:playandpizza/provider/user_provider.dart';
+import 'package:playandpizza/screens/onboarding.dart';
 import 'package:playandpizza/screens/pages_layout.dart';
 import 'package:playandpizza/screens/signup_screen.dart';
 import 'package:playandpizza/screens/login_screen.dart';
@@ -7,8 +8,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:playandpizza/resources/state_controll_wrapper.dart';
 
-int coins = 0; // initial coin
-int slices = 0; // initial slices
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -26,7 +25,8 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (_) => UserProvider(),
-        ),],
+        ),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
@@ -34,6 +34,7 @@ class MyApp extends StatelessWidget {
         ),
         home: const AuthStateWrapper(),
         routes: {
+          '/onboarding': (context) => const OnboardingScreen(),
           '/auth': (context) => const AuthStateWrapper(),
           '/home': (context) => const PagesLayout(page: 0),
           '/login': (context) => const LoginScreen(),

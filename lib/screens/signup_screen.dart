@@ -99,13 +99,13 @@ class _SignupScreenState extends State<SignupScreen> {
               Container(
                 margin: const EdgeInsets.only(bottom: 8),
                 child: const Text(
-                  'Konfirmasi Kata Sandi',
+                  'Konfirmasi kata sandi',
                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
                 ),
               ),
               AuthTextfield(
                 controller: _konfirmasiPwController,
-                hintText: 'Konfirmasi Kata Sandi',
+                hintText: 'Konfirmasi kata sandi',
                 obscureText: true,
               ),
               const SizedBox(height: 10),
@@ -120,29 +120,25 @@ class _SignupScreenState extends State<SignupScreen> {
                 alignment: Alignment.bottomCenter,
                 child: Column(
                   children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.9,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          _signup;
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.all(10),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4),
-                            side:
-                                const BorderSide(width: 1, color: Colors.white),
-                          ),
-                          backgroundColor: const Color(0xFFBD0000),
+                    FilledButton(
+                      style: FilledButton.styleFrom(
+                        backgroundColor:
+                            const Color(0xFFBD0000), // Hex color code
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              4.0), // Adjust this value to change the roundedness
                         ),
-                        child: const Text(
-                          'Gabung Sekarang',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
+                      ),
+                      onPressed: _signup,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text('Gabung sekarang'),
+                          const SizedBox(width: 10),
+                          Image.asset(
+                            'assets/Right Arrow.png',
                           ),
-                        ),
+                        ],
                       ),
                     ),
                     Row(
@@ -184,7 +180,13 @@ class _SignupScreenState extends State<SignupScreen> {
       username: _usernameController.text,
     );
     if (res == "success") {
-      Navigator.pushNamed(context, '/auth');
+      Navigator.pushReplacementNamed(context, '/auth');
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Gagal Registrasi'),
+        ),
+      );
     }
   }
 }
