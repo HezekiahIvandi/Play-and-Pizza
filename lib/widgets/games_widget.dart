@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:playandpizza/model/user.dart' as model;
 import 'package:playandpizza/provider/user_provider.dart';
+import 'package:playandpizza/screens/unity_game_screen.dart';
 import 'package:playandpizza/utils/color.dart';
 import 'package:provider/provider.dart';
-import 'package:playandpizza/screens/unity_game_screen.dart';
 
 class GamesWidget extends StatelessWidget {
   final String gameImage;
