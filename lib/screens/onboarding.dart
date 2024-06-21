@@ -148,7 +148,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ],
           ),
           const Text(
-            'Created by SD Tadika Mesra',
+            'Dibuat Oleh SD Tadika Mesra',
             style: TextStyle(
                 fontSize: 10,
                 fontWeight: FontWeight.w400,

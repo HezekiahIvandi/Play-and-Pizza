@@ -28,8 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   String _username = "pengguna";
-  int _coins = 0;
-  int _slices = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +35,6 @@ class _HomeScreenState extends State<HomeScreen> {
     model.User? user = Provider.of<UserProvider>(context).getUser;
     if (user?.username != null) {
       _username = user!.username;
-      _coins = user.coins;
-      _slices = user.slices;
     }
     return Scaffold(
       appBar: GenericAppbarWidget(
@@ -56,12 +52,12 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20),
+          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Mau memainkan\npermainan apa hari ini?',
+                'Mau main apa hari ini?',
                 style: GoogleFonts.poppins(
                     fontSize: 22, fontWeight: FontWeight.w700),
               ),

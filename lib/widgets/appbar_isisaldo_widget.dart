@@ -12,14 +12,12 @@ class AppBarIsiSaldo extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    String username = "pengguna";
     int coins = 0;
     int slices = 0;
     Provider.of<UserProvider>(context, listen: false).refreshUser();
     model.User? user = Provider.of<UserProvider>(context).getUser;
     if (user?.username != null) {
-      username = user!.username;
-      coins = user.coins;
+      coins = user!.coins;
       slices = user.slices;
     }
     return AppBar(

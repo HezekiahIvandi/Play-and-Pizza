@@ -163,29 +163,6 @@ class _IsiSaldo1State extends State<IsiSaldo1> {
               Row(
                 children: <Widget>[
                   Radio(
-                    value: 4,
-                    groupValue: _selectedOption,
-                    onChanged: (int? value) {
-                      setState(() {
-                        _selectedOption = value!;
-                      });
-                    },
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.asset(
-                      'assets/ngutangtetangga.png',
-                      width: 32,
-                      height: 32,
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  const Text20500(text: 'Ngutang Tetangga')
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Radio(
                     value: 5,
                     groupValue: _selectedOption,
                     onChanged: (int? value) {

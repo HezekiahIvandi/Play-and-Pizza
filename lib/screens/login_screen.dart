@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:playandpizza/resources/auth_service.dart';
 import 'dart:developer';
 import 'package:playandpizza/widgets/auth_textfield.dart';

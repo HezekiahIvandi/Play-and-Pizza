@@ -19,8 +19,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
   String _username = "pengguna";
   String _photoUrl =
       'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png';
-  int _coins = 0;
-  int _slices = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +26,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     model.User? user = Provider.of<UserProvider>(context).getUser;
     if (user?.username != null) {
       _username = user!.username;
-      _coins = user.coins;
-      _slices = user.slices;
       _photoUrl = user.photoUrl;
     }
     return Scaffold(

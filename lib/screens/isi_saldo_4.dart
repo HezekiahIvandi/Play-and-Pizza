@@ -38,9 +38,7 @@ class _IsiSaldo4State extends State<IsiSaldo4> {
     super.initState();
   }
 
-  String _username = "pengguna";
   int _coins = 0;
-  int _slices = 0;
   bool updated = false;
 
   @override
@@ -48,9 +46,7 @@ class _IsiSaldo4State extends State<IsiSaldo4> {
     Provider.of<UserProvider>(context, listen: false).refreshUser();
     model.User? user = Provider.of<UserProvider>(context).getUser;
     if (user?.username != null) {
-      _username = user!.username;
-      _coins = user.coins;
-      _slices = user.slices;
+      _coins = user!.coins;
       switch (widget.selectedOption) {
         case 0:
           _coins = _coins + 1;

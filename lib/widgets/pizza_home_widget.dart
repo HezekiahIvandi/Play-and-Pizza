@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playandpizza/model/user.dart' as model;
+import 'package:playandpizza/provider/user_provider.dart';
 import 'package:playandpizza/screens/order_pizza_page.dart';
 import 'package:playandpizza/utils/color.dart';
+import 'package:provider/provider.dart';
 
 class PizzaHomeWidget extends StatelessWidget {
   final String pizzaImage;
@@ -17,6 +20,8 @@ class PizzaHomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Provider.of<UserProvider>(context, listen: false).refreshUser();
+    model.User? user = Provider.of<UserProvider>(context).getUser;
     return Container(
       margin: const EdgeInsets.only(right: 12, bottom: 20),
       width: 150,
@@ -98,15 +103,23 @@ class PizzaHomeWidget extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 8),
                       ),
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => OrderPizzaPageScreen(
-                                    pizzaImage: pizzaImage,
-                                    pizzaName: pizzaName,
-                                    pizzaPrice: pizzaPrice,
-                                  )),
-                        );
+                        if (user != null) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => OrderPizzaPageScreen(
+                                      pizzaImage: pizzaImage,
+                                      pizzaName: pizzaName,
+                                      pizzaPrice: pizzaPrice,
+                                    )),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Masuk Terlebih Dahulu'),
+                            ),
+                          );
+                        }
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,

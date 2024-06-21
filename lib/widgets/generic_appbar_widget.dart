@@ -16,14 +16,12 @@ class GenericAppbarWidget extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
-    String username = "pengguna";
     int coins = 0;
     int slices = 0;
     Provider.of<UserProvider>(context, listen: false).refreshUser();
     model.User? user = Provider.of<UserProvider>(context).getUser;
     if (user?.username != null) {
-      username = user!.username;
-      coins = user.coins;
+      coins = user!.coins;
       slices = user.slices;
     }
     return AppBar(
@@ -35,10 +33,18 @@ class GenericAppbarWidget extends StatelessWidget
       actions: [
         GestureDetector(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const IsiSaldo1()),
-            );
+            if (user != null) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const IsiSaldo1()),
+              );
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('Masuk Terlebih Dahulu'),
+                ),
+              );
+            }
           },
           child: Container(
             margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),

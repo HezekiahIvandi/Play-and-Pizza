@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:playandpizza/model/user.dart' as model;
-import 'package:playandpizza/provider/user_provider.dart';
 import 'package:playandpizza/widgets/games_widget.dart';
 import 'package:playandpizza/widgets/generic_appbar_widget.dart';
-import 'package:provider/provider.dart';
 
 class GammeScreen extends StatefulWidget {
   const GammeScreen({super.key});
@@ -13,19 +10,8 @@ class GammeScreen extends StatefulWidget {
 }
 
 class _GammeScreenState extends State<GammeScreen> {
-  String _username = "pengguna";
-  int _coins = 0;
-  int _slices = 0;
-
   @override
   Widget build(BuildContext context) {
-    Provider.of<UserProvider>(context, listen: false).refreshUser();
-    model.User? user = Provider.of<UserProvider>(context).getUser;
-    if (user?.username != null) {
-      _username = user!.username;
-      _coins = user.coins;
-      _slices = user.slices;
-    }
     return Scaffold(
       appBar: GenericAppbarWidget(
         title: Container(

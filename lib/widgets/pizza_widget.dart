@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playandpizza/model/user.dart' as model;
+import 'package:playandpizza/provider/user_provider.dart';
 import 'package:playandpizza/screens/order_pizza_page.dart';
 import 'package:playandpizza/utils/color.dart';
+import 'package:provider/provider.dart';
 
 class PizzaWidget extends StatelessWidget {
   final String pizzaImage;
@@ -16,6 +19,8 @@ class PizzaWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Provider.of<UserProvider>(context, listen: false).refreshUser();
+    model.User? user = Provider.of<UserProvider>(context).getUser;
     return Column(
       children: [
         SizedBox(
@@ -77,15 +82,23 @@ class PizzaWidget extends StatelessWidget {
                       alignment: Alignment.bottomRight,
                       child: TextButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => OrderPizzaPageScreen(
-                                      pizzaImage: pizzaImage,
-                                      pizzaName: pizzaName,
-                                      pizzaPrice: pizzaPrice,
-                                    )),
-                          );
+                          if (user != null) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => OrderPizzaPageScreen(
+                                        pizzaImage: pizzaImage,
+                                        pizzaName: pizzaName,
+                                        pizzaPrice: pizzaPrice,
+                                      )),
+                            );
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Masuk Terlebih Dahulu'),
+                              ),
+                            );
+                          }
                         },
                         style: TextButton.styleFrom(
                           backgroundColor: primaryColor,

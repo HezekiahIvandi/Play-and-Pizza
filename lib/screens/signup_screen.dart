@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:playandpizza/widgets/auth_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:playandpizza/widgets/auth_appbar_widget.dart';
@@ -11,8 +13,6 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
-  final _auth = AuthService();
-
   //text editing controllers
   final TextEditingController _emailController = TextEditingController();
 
