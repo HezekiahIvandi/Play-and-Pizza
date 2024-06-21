@@ -6,6 +6,7 @@ import 'package:playandpizza/model/user.dart' as model;
 import 'package:playandpizza/provider/user_provider.dart';
 import 'package:playandpizza/utils/color.dart';
 import 'package:provider/provider.dart';
+import 'package:playandpizza/screens/unity_game_screen.dart';
 
 class GamesWidget extends StatelessWidget {
   final String gameImage;
@@ -109,6 +110,10 @@ class GamesWidget extends StatelessWidget {
                         updateCoins(newCoins);
                         int newSlices = slices + (gamePrice * 2);
                         updateSlices(newSlices);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => UnityGameScreen()));
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
